@@ -1,0 +1,32 @@
+{
+  "name": "starlight-client-mermaid-docs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Client-side support for Mermaid diagrams in Starlight",
+  "author": "bbecquet",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.31.1",
+    "astro": "^5.1.10",
+    "sharp": "^0.33.5",
+    "starlight-client-mermaid": "workspace:*"
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "private": true,
+  "homepage": "https://github.com/bbecquet/starlight-client-mermaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbecquet/starlight-client-mermaid.git",
+    "directory": "docs"
+  },
+  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues"
+}

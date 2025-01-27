@@ -1,0 +1,19 @@
+{
+  "name": "starlight-client-mermaid-monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Client-side support for Mermaid diagrams in Starlight",
+  "author": "bbecquet",
+  "type": "module",
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "private": true,
+  "homepage": "https://github.com/bbecquet/starlight-client-mermaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbecquet/starlight-client-mermaid.git"
+  },
+  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues"
+}
