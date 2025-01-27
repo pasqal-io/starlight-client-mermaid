@@ -1,8 +1,9 @@
-import type { StarlightPlugin } from '@astrojs/starlight/types'
+import type { StarlightPlugin } from "@astrojs/starlight/types";
+export { tagMermaid as remarkTagMermaid } from "./remarkTagMermaid.ts";
 
 export default function starlightClientMermaid(): StarlightPlugin {
   return {
-    name: 'starlight-client-mermaid',
+    name: "starlight-client-mermaid",
     hooks: {
       setup({ logger }) {
         /**
@@ -14,8 +15,8 @@ export default function starlightClientMermaid(): StarlightPlugin {
          *
          * @see https://starlight.astro.build/reference/plugins/
          */
-        logger.info('Hello from the starlight-client-mermaid plugin!')
+        logger.info("Hello from the starlight-client-mermaid plugin!");
       },
     },
-  }
+  };
 }

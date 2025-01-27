@@ -24,7 +24,14 @@ importers:
         version: link:../packages/starlight-client-mermaid
 
   packages/starlight-client-mermaid:
+    dependencies:
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^6.0.2
+        version: 6.0.2
       '@astrojs/starlight':
         specifier: ^0.31.1
         version: 0.31.1(astro@5.1.10(rollup@4.32.0)(typescript@5.7.3))

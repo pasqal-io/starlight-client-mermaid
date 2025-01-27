@@ -9,6 +9,7 @@
     ".": "./index.ts"
   },
   "devDependencies": {
+    "@astrojs/markdown-remark": "^6.0.2",
     "@astrojs/starlight": "^0.31.1",
     "astro": "^5.1.10"
   },
@@ -27,5 +28,8 @@
     "url": "https://github.com/bbecquet/starlight-client-mermaid.git",
     "directory": "packages/starlight-client-mermaid"
   },
-  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues"
+  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues",
+  "dependencies": {
+    "unist-util-visit": "^5.0.0"
+  }
 }
