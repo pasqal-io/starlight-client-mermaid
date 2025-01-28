@@ -11,10 +11,12 @@
   "devDependencies": {
     "@astrojs/markdown-remark": "^6.0.2",
     "@astrojs/starlight": "^0.31.1",
-    "astro": "^5.1.10"
+    "astro": "^5.1.10",
+    "mermaid": "^11.4.1"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.31"
+    "@astrojs/starlight": ">=0.31",
+    "mermaid": "^11.4.1"
   },
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"

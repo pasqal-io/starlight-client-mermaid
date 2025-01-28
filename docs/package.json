@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.31.1",
     "astro": "^5.1.10",
+    "mermaid": "^11.4.1",
     "sharp": "^0.33.5",
     "starlight-client-mermaid": "workspace:*"
   },

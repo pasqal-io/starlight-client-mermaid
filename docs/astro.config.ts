@@ -1,8 +1,6 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightClientMermaid, {
-  remarkTagMermaid,
-} from "starlight-client-mermaid";
+import starlightClientMermaid from "starlight-client-mermaid";
 
 export default defineConfig({
   integrations: [
@@ -11,7 +9,7 @@ export default defineConfig({
         baseUrl:
           "https://github.com/bbecquet/starlight-client-mermaid/edit/main/docs/",
       },
-      plugins: [starlightClientMermaid()],
+      plugins: [starlightClientMermaid({})],
       sidebar: ["getting-started", "examples"],
       social: {
         github: "https://github.com/bbecquet/starlight-client-mermaid",
@@ -19,7 +17,4 @@ export default defineConfig({
       title: "starlight-client-mermaid",
     }),
   ],
-  markdown: {
-    remarkPlugins: [remarkTagMermaid],
-  },
 });

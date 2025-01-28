@@ -12,12 +12,14 @@ const escapeMap: Record<string, string> = {
 const escapeHtml = (str: string) =>
   str.replace(/[&<>"']/g, (c) => escapeMap[c] as string);
 
-export const tagMermaid: RemarkPlugin<[]> = () => (tree) => {
-  visit(tree, "code", (node) => {
-    if (node.lang !== "mermaid") return;
+export const remarkTagMermaid: RemarkPlugin<[]> =
+  (opts = { className: "mermaid", loadingPlaceholder: "" }) =>
+  (tree) => {
+    visit(tree, "code", (node) => {
+      if (node.lang !== "mermaid") return;
 
-    // @ts-ignore TS expect it remains "code" but we need to force HTML injection inside Markdown
-    node.type = "html";
-    node.value = `<div class="mermaid" data-content="${escapeHtml(node.value)}"><p>Loading graph...</p></div>`;
-  });
-};
+      // @ts-ignore TS expect it remains "code", but we need to force HTML injection inside Markdown
+      node.type = "html";
+      node.value = `<div class="${opts.className}" data-content="${escapeHtml(node.value)}" data-status="loading">${opts.loadingPlaceholder}</div>`;
+    });
+  };
