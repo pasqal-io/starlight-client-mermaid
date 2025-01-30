@@ -1,0 +1,46 @@
+---
+title: Configuration
+---
+
+```js {11}
+// astro.config.mjs
+import starlight from '@astrojs/starlight'
+import { defineConfig } from 'astro/config'
+import starlightClientMermaid from 'starlight-client-mermaid'
+
+export default defineConfig({
+  integrations: [
+    starlight({
+      plugins: [
+        starlightClientMermaid({
+          // Configuration options go here.
+        }),
+      ],
+      title: 'My Docs',
+    }),
+  ],
+})
+```
+
+## Plugin options
+
+The Client Mermaid plugin accepts an object of configuration options. All the object fields are optional, but if you don't provide any, you still need to pass an empty object.
+
+Possible fields for this configuration object are:
+
+
+### `className`
+
+Type: `string`
+
+Default: `'mermaid'`
+
+CSS class to apply to Mermaid diagram `div` wrappers. Can be used to style them.
+
+### `loadingPlaceholder`
+
+Type: `string`
+
+Default: `''` (empty string)
+
+HTML content to display in the `div` before/during rendering. Will be replaced by the generated SVG when rendering is done.

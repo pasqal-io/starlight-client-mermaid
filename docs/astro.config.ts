@@ -10,11 +10,14 @@ export default defineConfig({
           "https://github.com/bbecquet/starlight-client-mermaid/edit/main/docs/",
       },
       plugins: [starlightClientMermaid({})],
-      sidebar: ["getting-started", "examples"],
+      sidebar: [
+        { label: "Usage", items: ["getting-started", "configuration"] },
+        "demo",
+      ],
       social: {
         github: "https://github.com/bbecquet/starlight-client-mermaid",
       },
-      title: "starlight-client-mermaid",
+      title: "Starlight client Mermaid",
     }),
   ],
 });
