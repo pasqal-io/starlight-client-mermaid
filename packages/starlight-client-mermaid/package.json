@@ -11,8 +11,7 @@
   "devDependencies": {
     "@astrojs/markdown-remark": "^6.0.2",
     "@astrojs/starlight": "^0.31.1",
-    "astro": "^5.1.10",
-    "mermaid": "^11.4.1"
+    "astro": "^5.1.10"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.31",

@@ -28,6 +28,9 @@ importers:
 
   packages/starlight-client-mermaid:
     dependencies:
+      mermaid:
+        specifier: ^11.4.1
+        version: 11.4.1
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -41,9 +44,6 @@ importers:
       astro:
         specifier: ^5.1.10
         version: 5.1.10(rollup@4.32.0)(typescript@5.7.3)
-      mermaid:
-        specifier: ^11.4.1
-        version: 11.4.1
 
 packages:
 
