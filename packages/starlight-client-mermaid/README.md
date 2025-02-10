@@ -1,6 +1,6 @@
 # `starlight-client-mermaid`
 
-Client-side support for Mermaid diagrams in Starlight
+Client-side support for Mermaid diagrams in Starlight.
 
 ## Documentation
 

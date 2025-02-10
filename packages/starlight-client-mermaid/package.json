@@ -6,7 +6,8 @@
   "author": "bbecquet",
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts",
+    "./components/overrides/MarkdownContent.astro": "./components/overrides/MarkdownContent.astro"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^6.0.2",

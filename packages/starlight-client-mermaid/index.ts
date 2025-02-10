@@ -1,6 +1,12 @@
-import type { StarlightPlugin } from "@astrojs/starlight/types";
+import type {
+  StarlightPlugin,
+  StarlightUserConfig,
+} from "@astrojs/starlight/types";
+import type { AstroIntegrationLogger } from "astro";
 import { remarkTagMermaid } from "./scripts/remarkTagMermaid";
-import { getClientInjectionScript } from "./scripts/clientScript";
+
+const PLUGIN_NAME = "starlight-client-mermaid";
+const OVERRIDES_PATH = `${PLUGIN_NAME}/components/overrides`;
 
 interface StarlightClientMermaidOptions {
   className?: string;
@@ -12,22 +18,37 @@ export default function starlightClientMermaid({
   loadingPlaceholder = "",
 }: StarlightClientMermaidOptions): StarlightPlugin {
   return {
-    name: "starlight-client-mermaid",
+    name: PLUGIN_NAME,
     hooks: {
-      setup({ command, astroConfig, addIntegration, logger }) {
+      setup({
+        command,
+        astroConfig,
+        addIntegration,
+        logger,
+        config: starlightConfig,
+        updateConfig: updateStarlightConfig,
+      }) {
         if (command !== "build" && command !== "dev") {
           return;
         }
-        logger.info("Setting up starlight-client-mermaid");
+        logger.info(`Setting up ${PLUGIN_NAME}`);
 
-        // We need to inject a client script and configure a Mardown remark plugin,
-        // two things happening at the Astro level
+        updateStarlightConfig({
+          components: {
+            ...starlightConfig.components,
+            ...overrideStarlightComponent(
+              starlightConfig.components,
+              logger,
+              "MarkdownContent",
+            ),
+          },
+        });
+
+        // We need to configure a Mardown remark plugin, which happens at the Astro level
         addIntegration({
-          name: "astro-client-mermaid",
+          name: `astro_${PLUGIN_NAME}`,
           hooks: {
-            "astro:config:setup": ({ injectScript, updateConfig }) => {
-              injectScript("page", getClientInjectionScript(className));
-
+            "astro:config:setup": ({ updateConfig }) => {
               updateConfig({
                 markdown: {
                   ...astroConfig.markdown,
@@ -42,5 +63,26 @@ export default function starlightClientMermaid({
         });
       },
     },
+  };
+}
+
+function overrideStarlightComponent(
+  components: StarlightUserConfig["components"],
+  logger: AstroIntegrationLogger,
+  component: keyof NonNullable<StarlightUserConfig["components"]>,
+) {
+  if (components?.[component]) {
+    logger.warn(
+      `It looks like you already have a \`${component}\` component override in your Starlight configuration.`,
+    );
+    logger.warn(
+      `To use \`${PLUGIN_NAME}\`, either remove your override or update it to render the content from \`${OVERRIDES_PATH}/${component}.astro\`.`,
+    );
+
+    return {};
+  }
+
+  return {
+    [component]: `${OVERRIDES_PATH}/${component}.astro`,
   };
 }
