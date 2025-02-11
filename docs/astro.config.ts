@@ -9,7 +9,7 @@ export default defineConfig({
         baseUrl:
           "https://github.com/bbecquet/starlight-client-mermaid/edit/main/docs/",
       },
-      plugins: [starlightClientMermaid({})],
+      plugins: [starlightClientMermaid()],
       sidebar: [
         { label: "Usage", items: ["getting-started", "configuration"] },
         "demo",

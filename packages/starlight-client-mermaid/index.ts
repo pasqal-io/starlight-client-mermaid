@@ -4,6 +4,7 @@ import type {
 } from "@astrojs/starlight/types";
 import type { AstroIntegrationLogger } from "astro";
 import { remarkTagMermaid } from "./scripts/remarkTagMermaid";
+import { vitePluginStarlightClientMermaidConfig } from "./libs/vite";
 
 const PLUGIN_NAME = "starlight-client-mermaid";
 const OVERRIDES_PATH = `${PLUGIN_NAME}/components/overrides`;
@@ -13,10 +14,16 @@ interface StarlightClientMermaidOptions {
   loadingPlaceholder?: string;
 }
 
-export default function starlightClientMermaid({
-  className = "mermaid",
-  loadingPlaceholder = "",
-}: StarlightClientMermaidOptions): StarlightPlugin {
+export default function starlightClientMermaid(
+  userOptions?: StarlightClientMermaidOptions,
+): StarlightPlugin {
+  const options = {
+    className: "mermaid",
+    loadingPlaceholder: "",
+    ...userOptions,
+  };
+  const { className, loadingPlaceholder } = options;
+
   return {
     name: PLUGIN_NAME,
     hooks: {
@@ -56,6 +63,9 @@ export default function starlightClientMermaid({
                     ...(astroConfig.markdown.remarkPlugins ?? []),
                     [remarkTagMermaid, { className, loadingPlaceholder }],
                   ],
+                },
+                vite: {
+                  plugins: [vitePluginStarlightClientMermaidConfig(options)],
                 },
               });
             },

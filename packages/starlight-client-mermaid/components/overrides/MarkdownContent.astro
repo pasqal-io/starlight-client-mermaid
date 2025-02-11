@@ -1,10 +1,22 @@
 ---
 import Default from "@astrojs/starlight/components/MarkdownContent.astro";
 import type { Props } from "@astrojs/starlight/props";
+
+import config from "virtual:starlight-client-mermaid";
+const { className } = config;
+
+declare global {
+  interface Window {
+    __mermaidClassName: string;
+  }
+}
 ---
 
 <Default {...Astro.props}>
   <slot />
+  <script define:vars={{ className }} is:inline>
+    window.__mermaidClassName = className;
+  </script>
   <script>
     async function renderDiagrams(graphs: HTMLCollectionOf<Element>) {
       const { default: mermaid } = await import("mermaid");
@@ -43,7 +55,9 @@ import type { Props } from "@astrojs/starlight/props";
       });
     }
 
-    const mermaidGraphs = document.getElementsByClassName("mermaid");
+    const mermaidGraphs = document.getElementsByClassName(
+      window.__mermaidClassName,
+    );
     if (mermaidGraphs.length > 0) {
       renderDiagrams(mermaidGraphs);
     }
