@@ -1,10 +1,10 @@
 ---
 import Default from "@astrojs/starlight/components/MarkdownContent.astro";
 import type { Props } from "@astrojs/starlight/props";
-
+// Extract config object exposed as virtual vite module
 import config from "virtual:starlight-client-mermaid";
 const { className } = config;
-
+// Use the window object to expose global config values from server to client
 declare global {
   interface Window {
     __mermaidClassName: string;
@@ -17,6 +17,8 @@ declare global {
   <script define:vars={{ className }} is:inline>
     window.__mermaidClassName = className;
   </script>
+  <!-- We can't use define:vars directly on this script, because it would be inlined
+  and async loading of the Mermaid package wouldn't work -->
   <script>
     async function renderDiagrams(graphs: HTMLCollectionOf<Element>) {
       const { default: mermaid } = await import("mermaid");
