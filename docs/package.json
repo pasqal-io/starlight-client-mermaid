@@ -23,11 +23,11 @@
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
   },
   "private": true,
-  "homepage": "https://github.com/bbecquet/starlight-client-mermaid",
+  "homepage": "https://github.com/pasqal-io/starlight-client-mermaid",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bbecquet/starlight-client-mermaid.git",
+    "url": "https://github.com/pasqal-io/starlight-client-mermaid.git",
     "directory": "docs"
   },
-  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues"
+  "bugs": "https://github.com/pasqal-io/starlight-client-mermaid/issues"
 }

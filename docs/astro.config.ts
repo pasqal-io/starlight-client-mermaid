@@ -7,7 +7,7 @@ export default defineConfig({
     starlight({
       editLink: {
         baseUrl:
-          "https://github.com/bbecquet/starlight-client-mermaid/edit/main/docs/",
+          "https://github.com/pasqal-io/starlight-client-mermaid/edit/main/docs/",
       },
       plugins: [starlightClientMermaid()],
       sidebar: [
@@ -15,7 +15,7 @@ export default defineConfig({
         "demo",
       ],
       social: {
-        github: "https://github.com/bbecquet/starlight-client-mermaid",
+        github: "https://github.com/pasqal-io/starlight-client-mermaid",
       },
       title: "Starlight client Mermaid",
     }),

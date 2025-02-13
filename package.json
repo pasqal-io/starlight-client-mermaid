@@ -10,10 +10,10 @@
   },
   "packageManager": "pnpm@9.6.0",
   "private": true,
-  "homepage": "https://github.com/bbecquet/starlight-client-mermaid",
+  "homepage": "https://github.com/pasqal-io/starlight-client-mermaid",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bbecquet/starlight-client-mermaid.git"
+    "url": "https://github.com/pasqal-io/starlight-client-mermaid.git"
   },
-  "bugs": "https://github.com/bbecquet/starlight-client-mermaid/issues"
+  "bugs": "https://github.com/pasqal-io/starlight-client-mermaid/issues"
 }
