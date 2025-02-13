@@ -14,6 +14,6 @@ Content can be found in the [`src/content/docs/`](./src/content/docs/) directory
 
 ## License
 
-Licensed under the MIT License, Copyright © bbecquet.
+Licensed under the Apache License 2.0, Copyright © Pasqal.
 
 See [LICENSE](/LICENSE) for more information.

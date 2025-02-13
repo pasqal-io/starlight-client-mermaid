@@ -12,6 +12,6 @@ This project uses pnpm workspaces to develop a single Starlight plugin from the 
 
 ## License
 
-Licensed under the MIT License, Copyright © bbecquet.
+Licensed under the Apache License 2.0, Copyright © Pasqal.
 
 See [LICENSE](/LICENSE) for more information.
