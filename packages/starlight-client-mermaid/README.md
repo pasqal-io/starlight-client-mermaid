@@ -6,7 +6,7 @@ Client-side support for Mermaid diagrams in Starlight.
 
 Want to get started immediately?
 
-Check out the `starlight-client-mermaid` getting started guide.
+Check out the `starlight-client-mermaid` [getting started guide](https://pasqal-io.github.io/starlight-client-mermaid/getting-started/).
 
 ## License
 
