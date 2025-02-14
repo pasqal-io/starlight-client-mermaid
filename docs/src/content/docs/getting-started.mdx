@@ -28,7 +28,7 @@ import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
    <TabItem label="npm">
 
    ```sh
-   npm install starlight-client-mermaid mermaid
+   npm install @pasqal-io/starlight-client-mermaid mermaid
    ```
 
    </TabItem>
@@ -36,7 +36,7 @@ import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
    <TabItem label="pnpm">
 
    ```sh
-   pnpm add starlight-client-mermaid mermaid
+   pnpm add @pasqal-io/starlight-client-mermaid mermaid
    ```
 
    </TabItem>
@@ -44,7 +44,7 @@ import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
    <TabItem label="Yarn">
 
    ```sh
-   yarn add starlight-client-mermaid mermaid
+   yarn add @pasqal-io/starlight-client-mermaid mermaid
    ```
 
    </TabItem>
@@ -57,7 +57,7 @@ import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
    // astro.config.mjs
    import starlight from '@astrojs/starlight'
    import { defineConfig } from 'astro/config'
-   +import starlightClientMermaid from 'starlight-client-mermaid'
+   +import starlightClientMermaid from '@pasqal-io/starlight-client-mermaid'
 
    export default defineConfig({
      integrations: [
