@@ -19,15 +19,15 @@ importers:
       astro:
         specifier: ^5.1.10
         version: 5.1.10(rollup@4.32.0)(typescript@5.7.3)
-      mermaid:
-        specifier: ^11.4.1
-        version: 11.4.1
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
 
   packages/starlight-client-mermaid:
     dependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^6.0.2
+        version: 6.0.2
       mermaid:
         specifier: ^11.4.1
         version: 11.4.1
@@ -35,9 +35,6 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
-      '@astrojs/markdown-remark':
-        specifier: ^6.0.2
-        version: 6.0.2
       '@astrojs/starlight':
         specifier: ^0.31.1
         version: 0.31.1(astro@5.1.10(rollup@4.32.0)(typescript@5.7.3))

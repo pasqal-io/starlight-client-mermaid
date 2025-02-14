@@ -66,6 +66,9 @@ export default function starlightClientMermaid(
                 },
                 vite: {
                   plugins: [vitePluginStarlightClientMermaidConfig(options)],
+                  optimizeDeps: {
+                    include: ["mermaid"], // used in dev to prevent issues with ESM imports of mermaid deps
+                  },
                 },
               });
             },
