@@ -1,7 +1,7 @@
 {
   "name": "starlight-client-mermaid-docs",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "description": "Client-side support for Mermaid diagrams in Starlight",
   "author": "bbecquet",
   "type": "module",
