@@ -1,6 +1,6 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-import starlightClientMermaid from "starlight-client-mermaid";
+import starlightClientMermaid from "@pasqal-io/starlight-client-mermaid";
 
 export default defineConfig({
   integrations: [
