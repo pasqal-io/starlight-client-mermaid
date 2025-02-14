@@ -4,7 +4,7 @@ import type { Config } from "./config";
 export function vitePluginStarlightClientMermaidConfig(
   config: Config,
 ): VitePlugin {
-  const moduleId = `virtual:starlight-client-mermaid`;
+  const moduleId = `virtual:@pasqal-io/starlight-client-mermaid`;
   const resolvedModuleId = `\0${moduleId}`;
   const moduleContent = `export default ${JSON.stringify(config)}`;
 

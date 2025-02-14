@@ -6,7 +6,7 @@ import type { AstroIntegrationLogger } from "astro";
 import { remarkTagMermaid } from "./scripts/remarkTagMermaid";
 import { vitePluginStarlightClientMermaidConfig } from "./libs/vite";
 
-const PLUGIN_NAME = "starlight-client-mermaid";
+const PLUGIN_NAME = "@pasqal-io/starlight-client-mermaid";
 const OVERRIDES_PATH = `${PLUGIN_NAME}/components/overrides`;
 
 interface StarlightClientMermaidOptions {
