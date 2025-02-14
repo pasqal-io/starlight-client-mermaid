@@ -7,7 +7,7 @@ title: Getting Started
 'Client-side' means the Mermaid diagrams are rendered to SVGs on the user's browser, as opposed to generating them on the server. This is mostly to avoid the hard requirement of installing an headless browser for server-based solutions, something that can cause troubles in some CI configurations. Also, server-based still requires some config fiddling and client-side scripting to properly support theme switching.
 
 However, there are drawbacks for this client-side implementation:
-- MermaidJS code has to be fetched and run by the client. It has a modular architecture to import only the necessary code for the diagram types actually used, but still, it will increase your JS client budget, and it means the rendering perfs depend on the client setup ;
+- MermaidJS code has to be fetched and run by the client. It has a modular architecture to import only the necessary code for the diagram types actually used, but still, the core only is around 450Kb uncompressed. It means also the rendering perfs will depend on the client setup ;
 - Diagrams will be rendered after the page is loaded, meaning there will be a loading and relayout effect ;
 - No cache: diagrams will be re-rendered each time the user reloads or revisits a page.
 
