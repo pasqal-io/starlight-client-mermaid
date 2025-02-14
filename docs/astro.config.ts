@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import starlightClientMermaid from "@pasqal-io/starlight-client-mermaid";
 
 export default defineConfig({
+  site: "https://pasqal-io.github.io",
+  base: "starlight-client-mermaid",
   integrations: [
     starlight({
       editLink: {
@@ -11,7 +13,10 @@ export default defineConfig({
       },
       plugins: [starlightClientMermaid()],
       sidebar: [
-        { label: "Usage", items: ["getting-started", "configuration"] },
+        {
+          label: "Usage",
+          items: ["getting-started", "configuration"],
+        },
         "demo",
       ],
       social: {
