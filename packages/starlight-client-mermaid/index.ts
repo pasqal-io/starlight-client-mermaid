@@ -79,6 +79,9 @@ export default function starlightClientMermaid(
   };
 }
 
+// Overrides a Starlight component, with warning and instructions
+// in case it was already overriden in user config.
+// Credit: https://github.com/HiDeoo/starlight-blog/blob/94d156f50321c94a8f8af8a916ddcd08082f807d/packages/starlight-blog/index.ts#L119-L136
 function overrideStarlightComponent(
   components: StarlightUserConfig["components"],
   logger: AstroIntegrationLogger,
