@@ -27,7 +27,7 @@ export default function starlightClientMermaid(
   return {
     name: PLUGIN_NAME,
     hooks: {
-      setup({
+      "config:setup"({
         command,
         astroConfig,
         addIntegration,
