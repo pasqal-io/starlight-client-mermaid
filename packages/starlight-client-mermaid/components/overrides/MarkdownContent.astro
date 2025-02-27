@@ -1,6 +1,5 @@
 ---
 import Default from "@astrojs/starlight/components/MarkdownContent.astro";
-import type { Props } from "@astrojs/starlight/props";
 // Extract config object exposed as virtual vite module
 import config from "virtual:@pasqal-io/starlight-client-mermaid";
 const { className } = config;
@@ -12,7 +11,7 @@ declare global {
 }
 ---
 
-<Default {...Astro.props}>
+<Default>
   <slot />
   <script define:vars={{ className }} is:inline>
     window.__mermaidClassName = className;
